@@ -13,10 +13,19 @@
 
 		gtag('config', 'G-3VGMM00PFY');
 	</script>
+	<script>
+		document.addEventListener("DOMContentLoaded", function() {
+			g = new Date();
+			
+			if (g.getDate() === 12 && g.getMonth() === 8) {document.getElementById("msg").textContent = "Bu \u{1F382} yarın burada olmayacak çünkü bugüne özel.";}
+		});
+	</script>
 	<title>Ali Bartu Şermet</title>
 	<style>
 		body {
 			background: #ECECEC;
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 14px;
 		}
 		
 		.bilgi {
@@ -25,8 +34,11 @@
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
+			text-align: center;
 		}
 	</style>
 </head>
-<body><div class="bilgi"><img src="kardanadam.png" /></div></body>
+<body>
+	<div class="bilgi"><img src="kardanadam.png" /><br /><p id="msg">&nbsp;</p></div>
+</body>
 </html>
