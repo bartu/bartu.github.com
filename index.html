@@ -21,7 +21,7 @@
 		document.addEventListener("DOMContentLoaded", function() {
 			g = new Date();
 			
-			if (g.getDate() === 12 && g.getMonth() === 8) {document.getElementById("msg").textContent = "Bu \u{1F382} bugüne özel ve yarın burada olmayacak.";}
+			if (g.getDate() === 12 && g.getMonth() === 8) {document.getElementById("msg").textContent = "\u{1F382}";}
 		});
 	</script>
 	<title>Ali Bartu Şermet</title>
@@ -30,6 +30,14 @@
 			background: #ECECEC;
 			font-family: "Inter", sans-serif;
 			font-size: 14px;
+		}
+		
+		a {
+			color: #000000;
+			font-family: "Inter", sans-serif;
+			font-size: 14px;
+			font-weight: bold;
+			text-decoration: none;
 		}
 		
 		.bilgi {
@@ -46,7 +54,7 @@
 	<div class="bilgi">
 		<p><img alt="kardan adam" src="kardanadam.png"></p>
 		<p id="msg">&nbsp;</p>
-		<p><a href="http://www.linkedin.com/in/bartu" target="_blank"><img alt="LinkedIn" src="linkedin.png" /></a></p>
+		<p><a href="http://www.linkedin.com/in/bartu" target="_blank">LinkedIn</a></p>
 	</div>
 </body>
 </html>
