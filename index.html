@@ -18,12 +18,20 @@
 		gtag('config', 'G-3VGMM00PFY');
 	</script>
 	<script>
-		document.addEventListener("DOMContentLoaded", function() {
-			g = new Date();
-			
-			if (g.getDate() === 12 && g.getMonth() === 8) {document.getElementById("msg").textContent = "\u{1F382}";}
+		window.addEventListener("DOMContentLoaded", (event) => {
+			const textarea = document.getElementById('msj');
+
+			textarea.addEventListener('keydown', function(event) {
+				if (event.key === 'Enter' && !event.shiftKey) {
+					event.preventDefault();
+					
+					if (textarea.value.trim() !== '') {
+						document.getElementById('msj_form').submit();
+					}
+				}
+			});
 		});
-	</script>
+    </script>
 	<title>Ali Bartu Şermet</title>
 	<style>
 		body {
@@ -41,20 +49,41 @@
 		}
 		
 		.bilgi {
+			display: grid;
 			margin: 0;
 			position: absolute;
 			top: 50%;
 			left: 50%;
 			transform: translate(-50%, -50%);
 			text-align: center;
+			gap: 15px
 		}
+		
+		textarea {
+            width: 500px;
+            height: 150px;
+            max-width: 100%;
+            padding: 10px;
+            color: #000000;
+            background-color: #f7fafc;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            resize: vertical;
+            outline: none;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+            font-family: inherit;
+        }
 	</style>
 </head>
 <body>
 	<div class="bilgi">
 		<p><img alt="kardan adam" src="kardanadam.png"></p>
-		<p id="msg">&nbsp;</p>
-		<p><a href="http://www.linkedin.com/in/bartu" target="_blank">LinkedIn</a></p>
+		<p id="msg">
+			<form action="https://formspree.io/f/moeekglk" id="msj_form" method="POST">
+				<label><textarea id="msj" name="msj" placeholder="Write something."></textarea></label>
+			</form>
+		</p>
 	</div>
 </body>
 </html>
